@@ -1,5 +1,9 @@
 package disk
 
+import (
+	"time"
+)
+
 type diskIoTime struct {
 	tstamp time.Time
 	iotime uint64
@@ -11,7 +15,7 @@ func countPcUtil(tstamp time.Time, name string, iotime uint64) (pc float64) {
 	last, ok := lastCheck[name]
 
 	if !ok {
-		disksStat[name] = &diskIoTime{tstamp, iotime}
+		lastCheck[name] = &diskIoTime{tstamp, iotime}
 		return
 	}
 
