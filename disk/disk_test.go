@@ -90,7 +90,7 @@ func TestDiskIOCountersStat_String(t *testing.T) {
 		WriteBytes:   400,
 		SerialNumber: "SERIAL",
 	}
-	e := `{"read_count":100,"write_count":200,"read_bytes":300,"write_bytes":400,"read_time":0,"write_time":0,"name":"sd01","io_time":0,"serial_number":"SERIAL"}`
+	e := `{"read_count":100,"write_count":200,"read_bytes":300,"write_bytes":400,"read_time":0,"write_time":0,"name":"sd01","io_time":0,"pc_util":0,"serial_number":"SERIAL"}`
 	if e != fmt.Sprintf("%v", v) {
 		t.Errorf("DiskUsageStat string is invalid: %v", v)
 	}
