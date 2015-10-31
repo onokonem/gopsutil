@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/shirou/gopsutil/internal/common"
+	"github.com/onokonem/gopsutil/internal/common"
 )
 
 // example of netstat -idbn output on yosemite

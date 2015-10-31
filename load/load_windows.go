@@ -3,7 +3,7 @@
 package load
 
 import (
-	"github.com/shirou/gopsutil/internal/common"
+	"github.com/onokonem/gopsutil/internal/common"
 )
 
 func LoadAvg() (*LoadAvgStat, error) {

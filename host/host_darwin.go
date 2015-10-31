@@ -13,7 +13,7 @@ import (
 	"strings"
 	"unsafe"
 
-	"github.com/shirou/gopsutil/internal/common"
+	"github.com/onokonem/gopsutil/internal/common"
 )
 
 func HostInfo() (*HostInfoStat, error) {
