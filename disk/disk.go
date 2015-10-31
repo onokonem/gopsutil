@@ -33,6 +33,7 @@ type DiskIOCountersStat struct {
 	WriteTime    uint64 `json:"write_time"`
 	Name         string `json:"name"`
 	IoTime       uint64 `json:"io_time"`
+	PcUtil       float64 `json:"pc_util"`
 	SerialNumber string `json:"serial_number"`
 }
 

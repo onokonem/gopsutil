@@ -8,6 +8,7 @@ import (
 	"strconv"
 	"strings"
 	"syscall"
+	"time"
 
 	"github.com/shirou/gopsutil/internal/common"
 )
@@ -239,6 +240,9 @@ func DiskPartitions(all bool) ([]DiskPartitionStat, error) {
 
 func DiskIOCounters() (map[string]DiskIOCountersStat, error) {
 	filename := common.HostProc("diskstats")
+
+	tstamp := time.Now()
+
 	lines, err := common.ReadLines(filename)
 	if err != nil {
 		return nil, err
@@ -285,6 +289,7 @@ func DiskIOCounters() (map[string]DiskIOCountersStat, error) {
 			ReadTime:   rtime,
 			WriteTime:  wtime,
 			IoTime:     iotime,
+			PcUtil:     countPcUtil(tstamp, name, iotime),
 		}
 		if d == empty {
 			continue
